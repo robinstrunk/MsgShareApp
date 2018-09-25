@@ -35,4 +35,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:text="Send Data To Next Activity" />
+
+    <Button
+        android:id="@+id/btnShareToOtherApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="Share Data To Other App" />
+
+    <Button
+        android:id="@+id/btnRecyclerViewDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
+        android:text="Recycler and Card View" />
 </RelativeLayout>
