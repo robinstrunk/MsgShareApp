@@ -1,18 +1,18 @@
-package com.greemand.msgshareapp
+package com.greemand.msgshareapp.adapters
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.greemand.msgshareapp.R.id.etUserMessage
-import kotlinx.android.synthetic.main.activity_main.*
+import com.greemand.msgshareapp.models.Hobby
+import com.greemand.msgshareapp.R
+import com.greemand.msgshareapp.showToast
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
+class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.list_item, p0, false)
         return MyViewHolder(view)
@@ -33,29 +33,36 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerV
         var currentPosition: Int = 0
 
         init {
+
             itemView.setOnClickListener {
-                Toast.makeText(context, currentHobby!!.title + " Clicked!", Toast.LENGTH_SHORT).show()
-            }
+                currentHobby?.let {
+                    context.showToast(currentHobby!!.title + " Clicked!")
+                }
+
+                }
 
             itemView.imgShare.setOnClickListener{
-                val message: String = "My hobby is: " + currentHobby!!.title
-                val intent = Intent()
-                intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT, message)
-                intent.type = "text/Plain"
+                currentHobby?.let {
+                    val message: String = "My hobby is: " + currentHobby!!.title
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT, message)
+                    intent.type = "text/Plain"
 
-                context.startActivity(Intent.createChooser(intent, "Share message to: "))
+                    context.startActivity(Intent.createChooser(intent, "Share message to: "))
+                }
+
 
             }
         }
         fun setData(hobby: Hobby?, position: Int) {
-            itemView.txvTitle.text = hobby!!.title
+            hobby?.let {
+                itemView.txvTitle.text = hobby.title
 
-            this.currentHobby = hobby
-            this.currentPosition = position
+                this.currentHobby = hobby
+                this.currentPosition = position
+            }
+
         }
     }
-
-
-
 }

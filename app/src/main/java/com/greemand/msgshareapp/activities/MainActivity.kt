@@ -1,13 +1,20 @@
-package com.greemand.msgshareapp
+package com.greemand.msgshareapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.greemand.msgshareapp.Constants.USER_MESSAGE
+import com.greemand.msgshareapp.R
+import com.greemand.msgshareapp.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        val TAG: String = MainActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,8 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         btnShowToast.setOnClickListener {
             //Code
-            Log.i("MainActivity", "Button Clicked!")
-            Toast.makeText(this, "Button Clicked!", Toast.LENGTH_SHORT).show()
+            Log.i(TAG, "Button Clicked!")
+            showToast("Button Clicked!", Toast.LENGTH_LONG)
         }
 
         btnSendMessageToNextActivity.setOnClickListener {
@@ -24,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             val message: String = etUserMessage.text.toString()
             val intent = Intent(this, SecondActivity::class.java)
 
-            intent.putExtra("user_message", message)
+            intent.putExtra(USER_MESSAGE, message)
 
             startActivity(intent)
 
