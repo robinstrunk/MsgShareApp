@@ -36,20 +36,20 @@ class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : R
 
             itemView.setOnClickListener {
                 currentHobby?.let {
-                    context.showToast(currentHobby!!.title + " Clicked!")
+                    context.showToast(currentHobby!!.title + " " + context.resources.getString(R.string.clicked))
                 }
 
                 }
 
             itemView.imgShare.setOnClickListener{
                 currentHobby?.let {
-                    val message: String = "My hobby is: " + currentHobby!!.title
+                    val message: String = context.resources.getString(R.string.my_hobby_is) + currentHobby!!.title
                     val intent = Intent()
                     intent.action = Intent.ACTION_SEND
                     intent.putExtra(Intent.EXTRA_TEXT, message)
                     intent.type = "text/Plain"
 
-                    context.startActivity(Intent.createChooser(intent, "Share message to: "))
+                    context.startActivity(Intent.createChooser(intent, context.resources.getString(R.string.share_msg_dialog)))
                 }
 
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btn_show_toast">Zeige Toast</string>
+
+    <string name="usr_msg_hint">Gib deine Nachricht ein</string>
+    <string name="btn_send_msg_to_next_activity">Sende die Daten zur nächsten Aktivität</string>
+    <string name="btn_send_to_other_app">Teile die Daten</string>
+    <string name="btn_recycler_card_view">Recycler und Card View</string>
+    <string name="btn_clicked">Knopf geklickt!</string>
+
+
+</resources>

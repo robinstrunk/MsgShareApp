@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MsgShareApp</string>
+    <string name="btn_show_toast">Show Toast</string>
+    <string name="usr_msg_hint">Enter your message</string>
+    <string name="btn_send_msg_to_next_activity">Send Data To Next Activity</string>
+    <string name="btn_send_to_other_app">Share Data To Other App</string>
+    <string name="btn_recycler_card_view">Recycler and Card View</string>
+    <string name="btn_clicked">Button Clicked!</string>
+
+    <string name="share_msg_dialog">Share message to: </string>
+    <string name="my_hobby_is">My hobby is: </string>
+    <string name="clicked"> Clicked!</string>
+
+    <string name="txt_view">TextView"</string>
+    <string name="title">Title</string>
 </resources>

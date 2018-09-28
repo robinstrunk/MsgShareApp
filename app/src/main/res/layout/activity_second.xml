@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="TextView"
+        android:text="@string/txt_view"
         android:textAlignment="center"
         android:textColor="#20a420"
         android:textSize="30sp"

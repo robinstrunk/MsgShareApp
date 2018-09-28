@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         btnShowToast.setOnClickListener {
             //Code
             Log.i(TAG, "Button Clicked!")
-            showToast("Button Clicked!", Toast.LENGTH_LONG)
+            showToast(resources.getString(R.string.btn_clicked), Toast.LENGTH_LONG)
         }
 
         btnSendMessageToNextActivity.setOnClickListener {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_TEXT, message)
             intent.type = "text/Plain"
 
-            startActivity(Intent.createChooser(intent, "Share message to: "))
+            startActivity(Intent.createChooser(intent, resources.getString(R.string.share_msg_dialog)))
         }
 
         btnRecyclerViewDemo.setOnClickListener {

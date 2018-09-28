@@ -18,7 +18,7 @@ class SecondActivity : AppCompatActivity() {
         //Safe Call with let ?.let { }
 
         bundle?.let{
-            val msg = bundle!!.getString(USER_MESSAGE)
+            val msg = bundle.getString(USER_MESSAGE)
             showToast(msg)
             txvUserMessage.text = msg
         }
